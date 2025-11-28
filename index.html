@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>RickyHub</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+        }
+      }
+    </script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="rf-header">
+        <div class="rf-logo">
+          <span class="rf-logo-main">Ricky</span><span class="rf-logo-tag">Hub</span>
+        </div>
+        <div class="rf-profile-dot"></div>
+      </header>
+
+      <main class="rf-main">
+        <section class="rf-hero" id="hero">
+          <div class="rf-hero-gradient"></div>
+          <div class="rf-hero-content">
+            <div class="rf-hero-tag" id="heroTag"></div>
+            <h1 class="rf-hero-title" id="heroTitle"></h1>
+            <p class="rf-hero-desc" id="heroDesc"></p>
+            <div class="rf-hero-actions">
+              <button class="rf-btn rf-btn-primary" id="heroPlayBtn">▶ Reproducir</button>
+              <button class="rf-btn rf-btn-secondary" id="heroInfoBtn">ℹ Info</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="rf-grid" id="grid"></section>
+      </main>
+
+      <nav class="rf-bottom-nav">
+        <button class="rf-nav-item rf-nav-item--active" data-filter="all">Inicio</button>
+        <button class="rf-nav-item" data-filter="series">Series</button>
+        <button class="rf-nav-item" data-filter="peliculas">Películas</button>
+        <button class="rf-nav-item" data-filter="mi-lista">Mi lista</button>
+      </nav>
+
+      <div class="rf-modal-backdrop" id="modalBackdrop" hidden>
+        <div class="rf-modal">
+          <button class="rf-modal-close" id="modalCloseBtn">✕</button>
+          <div class="rf-modal-hero" id="modalHero"></div>
+          <div class="rf-modal-content">
+            <div class="rf-modal-meta">
+              <span class="rf-modal-badge" id="modalType"></span>
+              <span class="rf-modal-year" id="modalYear"></span>
+              <span class="rf-modal-rating" id="modalRating"></span>
+            </div>
+            <h2 class="rf-modal-title" id="modalTitle"></h2>
+            <p class="rf-modal-desc" id="modalDesc"></p>
+            <div class="rf-modal-actions">
+              <button class="rf-btn rf-btn-primary" id="modalPlayBtn">▶ Reproducir</button>
+              <button class="rf-btn rf-btn-secondary" id="modalMyListBtn">☆ Mi lista</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rf-toast" id="toast" hidden></div>
+
+      <!-- Player overlay -->
+      <div class="rf-player-backdrop" id="playerBackdrop" hidden>
+        <div class="rf-player">
+          <header class="rf-player-header">
+            <button class="rf-player-close" id="playerCloseBtn">✕</button>
+            <div class="rf-player-title" id="playerTitle"></div>
+          </header>
+          <div class="rf-player-video-wrap">
+            <video id="playerVideo" playsinline controls></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
